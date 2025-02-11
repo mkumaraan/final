@@ -1,0 +1,157 @@
+/* Full-page gradient background */
+header {
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1E3A8A, #FF5733);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.heading{
+  text-align: center;
+  padding-top: 50px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 40px;
+  color: #ffff;
+}
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 30px;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #1E3A8A, #ce2865);
+}
+
+.nav-left .nav-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFD700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-right{
+  display: flex;
+  gap: 10px;
+}
+
+.nav-link.active,.nav-link {
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: yellow;
+  border: 2px solid #FFD700;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link:hover, .nav-link.active:hover {
+  background: #FFD700;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 25px; /* Adjust for navbar */
+}
+
+/* Glassmorphic Login Form */
+.login-form {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Input Fields */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Login Button */
+.login-btn {  
+  padding: 10px 20px;
+  background-color: #fa044d;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: #f04a73;
+}
+
+/* Register Link */
+.register-link {
+  margin-top: 25px;
+  color: white;
+}
+
+.register-link a {
+  color: #ffcb77;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: under;
+  cursor: pointer;
+}

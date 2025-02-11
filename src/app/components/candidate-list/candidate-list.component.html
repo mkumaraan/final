@@ -1,0 +1,23 @@
+<div class="candidates-container">
+  <h2>Candidates</h2>
+  <table class="candidates-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let candidate of candidates">
+        <td>{{ candidate.candidateId }}</td>
+        <td>{{ candidate.name }}</td>
+        <td>{{ candidate.email }}</td>
+        <td>{{ candidate.role }}</td>
+        <td><button class="button"(click)="onCandidateSelect(candidate)">Edit</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

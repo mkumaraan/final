@@ -1,0 +1,65 @@
+<header>
+  <nav class="navbar">
+    <a class="logo" (click)="goToLanding()">Voting System</a>
+    <div class="nav-buttons">
+      <button class="nav-btn" (click)="goToRegister()">Register</button>
+      <button class="nav-btn active" (click)="goToLogin()">Login</button>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <h1 class="page-title">Join the Vote! <br><br><span>Your Voice, Your Power.</span></h1>
+<!-- Register Container -->
+<div class="register-container">
+  <div class="register-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="formData.name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="formData.email" required />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="formData.password" required />
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="number" id="age" [(ngModel)]="formData.age" required />
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select id="gender" [(ngModel)]="formData.gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="districtId">District ID</label>
+      <input type="number" id="districtId" [(ngModel)]="formData.districtId" required />
+    </div>
+    <div class="form-group">
+      <label for="role">Role</label>
+      <select id="role" [(ngModel)]="formData.role" required>
+        <option value="USER">User</option>
+        <option value="ADMIN">Admin</option>
+      </select>
+    </div>
+
+    <div class="button-container">
+      <button class="register-btn" (click)="register()">Register</button>
+    </div>
+
+    <p class="login-link">Already have an account? <a (click)="goToLogin()">Login here</a></p>
+
+    <div *ngIf="registrationSuccess" class="success-message">
+      {{ successMessage }}
+    </div>
+  </div>
+</div>
+</body>
+
+

@@ -1,0 +1,39 @@
+<!-- Formatted String Results -->
+<div class="formatted-results-container">
+  <h2>Election Summary</h2>
+  <ul *ngIf="formattedResults.length > 0">
+    <li *ngFor="let formattedResult of formattedResults">{{ formattedResult }}</li>
+  </ul>
+  <p *ngIf="formattedResults.length === 0">No election summary available.</p>
+</div>
+
+<!-- Button to Show/Hide Table -->
+<button class="button" (click)="toggleResultsTable()">View Detailed Results</button>
+
+<!-- Voting Results Table -->
+<div class="results-container" *ngIf="showTable && !isLoading">
+  <h2>Detailed Voting Results</h2>
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>State</th>
+        <th>District</th>
+        <th>Party</th>
+        <th>Leader</th>
+        <th>Votes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let result of results">
+        <td>{{ result.stateName }}</td>
+        <td>{{ result.districtName }}</td>
+        <td>{{ result.partyName }}</td>
+        <td>{{ result.leaderName }}</td>
+        <td>{{ result.votes }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="results.length === 0">No detailed results available.</p>
+</div>
+
+<div *ngIf="isLoading">Loading...</div>

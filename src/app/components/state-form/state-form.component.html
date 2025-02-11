@@ -1,0 +1,39 @@
+  <div class="state-container">
+    <!-- State Form -->
+     <h2 style="margin-bottom: 0px;">Create State</h2>
+    <div class="form-container">
+      <div class="form-group">
+        <label for="stateName">State Name</label>
+        <input type="text" id="stateName" name="stateName" [(ngModel)]="stateFormData.name" placeholder="Enter state name"
+          required />
+      </div>
+  
+      <button class="primary-btn" (click)="createState()">Create State</button>
+      <div *ngIf="isLoading" class="loading-text">Loading...</div>
+    </div>
+  </div>
+  
+  <div>
+    <!-- Existing States Table -->
+    <div class="state table">
+      <h3 class="table-head">Existing States</h3>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let state of states">
+            <td>{{ state.stateId }}</td>
+            <td>{{ state.name }}</td>
+            <td>
+              <button class="delete-btn" (click)="deleteState(state.stateId)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

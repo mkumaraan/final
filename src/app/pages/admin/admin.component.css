@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1E3A8A, #FF5733);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding-bottom: 900px;
+}
+
+header {
+  width: 100%;
+}
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 30px;
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #1E3A8A, #ce2865);
+}
+
+.nav-left .nav-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-right {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-link,.logout-btn {
+  padding: 6px 14px;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: yellow;
+  border: 2px solid #FFD700;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  margin: auto;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-link:hover, .nav-link.active,.logout-btn:hover {
+  background: #FFD700;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Admin Container */
+.admin-container {
+  padding: 20px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.admin-title{
+  color: white;
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Section Container */
+.section-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Admin Navigation */
+.admin-navigation {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.admin-navigation button {
+  padding: 10px 15px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.admin-navigation button.active {
+  background-color: #ffffff;
+  color: black;
+  font-weight: bold;
+}
+
+.admin-navigation button:hover {
+  background-color: #ffffff;
+  color: black;
+  font-weight: bold;
+  transition: background-color 0.5s ease, color 0.5s ease, font-weight 0.5s ease;
+}
+
+/* Tables */
+.results-table, .candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.results-table th, .candidates-table th {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.results-table td, .candidates-table td {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Results Section */
+.results-section {
+  text-align: center;
+}
+
+.results-summary {
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+}
+
+.state head{
+  color: #ffd700;
+}

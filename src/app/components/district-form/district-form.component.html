@@ -1,0 +1,38 @@
+<div class="input-container">
+  <h2>Create District</h2>
+  <div class="form-group">
+    <label for="districtName">District Name</label>
+    <input type="text" id="districtName" [(ngModel)]="districtFormData.name" placeholder="Enter district name" style="color: gray;" />
+  </div>
+  <div class="form-group">
+    <label for="state">Select State</label>
+    <select id="state" [(ngModel)]="districtFormData.stateId" required>
+      <option value="0">Select a State</option>
+      <option *ngFor="let state of states" [value]="state.stateId">{{ state.name }}</option>
+    </select>
+  </div>
+  <button class="primary-btn" (click)="createDistrict()">Create District</button>
+</div>
+
+<!-- Districts Table -->
+<div class="district-table">
+  <h3 style="color: white;">Existing Districts</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let district of districts">
+        <td>{{ district.districtId }}</td>
+        <td>{{ district.name }}</td>
+        <td>
+          <button class="delete-btn" (click)="deleteDistrict(district.districtId)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,42 @@
+<div class="selected-candidate-container" *ngIf="selectedCandidate">
+  <h2>Edit Candidate</h2>
+  <div class="form-group">
+    <label for="candidateName">Name</label>
+    <input type="text" id="candidateName" name="candidateName" [(ngModel)]="candidateFormData.name" required />
+  </div>
+  <div class="form-group">
+    <label for="candidateEmail">Email</label>
+    <input type="email" id="candidateEmail" name="candidateEmail" [(ngModel)]="candidateFormData.email" required />
+  </div>
+  <div class="form-group">
+    <label for="candidatePassword">Password</label>
+    <input type="password" id="candidatePassword" name="candidatePassword" [(ngModel)]="candidateFormData.password" />
+  </div>
+  <div class="form-group">
+    <label for="candidateAge">Age</label>
+    <input type="number" id="candidateAge" name="candidateAge" [(ngModel)]="candidateFormData.age" required />
+  </div>
+  <div class="form-group">
+    <label for="candidateGender">Gender</label>
+    <select id="candidateGender" name="candidateGender" [(ngModel)]="candidateFormData.gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="candidateDistrictId">District ID</label>
+    <input type="number" id="candidateDistrictId" name="candidateDistrictId" [(ngModel)]="candidateFormData.districtId" required />
+  </div>
+  <div class="form-group">
+    <label for="candidateRole">Role</label>
+    <select id="candidateRole" name="candidateRole" [(ngModel)]="candidateFormData.role" required>
+      <option value="USER">User</option>
+      <option value="ADMIN">Admin</option>
+    </select>
+  </div>
+  <button class="button" (click)="updateCandidate()">Update</button>
+  <button class="button" (click)="deleteCandidate()">Delete</button>
+  <button class="button"  (click)="cancelEdit()">Cancel</button>
+  <div *ngIf="isLoading">Loading...</div>
+</div>

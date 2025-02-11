@@ -1,0 +1,82 @@
+<!-- Navigation Bar -->
+<header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a (click)="goToLanding()" class="nav-title">Voting System</a>
+    </div>
+    <div class="nav-right">
+      <button class= "nav-link"(click)="goToLanding()">Home</button>
+      <button class= "nav-link"(click)="goToRegister()">Register</button>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <!-- Admin Panel -->
+  <div class="admin-container">
+    <h2 class="admin-title">ADMIN PANEL</h2>
+
+    <!-- Navigation Tabs -->
+    <div class="admin-navigation">
+      <button (click)="activeTab = 'state'" [class.active]="activeTab === 'state'">State</button>
+      <button (click)="activeTab = 'district'" [class.active]="activeTab === 'district'">District</button>
+      <button (click)="activeTab = 'party'" [class.active]="activeTab === 'party'">Party</button>
+      <button (click)="activeTab = 'candidate'" [class.active]="activeTab === 'candidate'">Candidates</button>
+      <button (click)="activeTab = 'results'" [class.active]="activeTab === 'results'">Results</button>
+    </div>
+
+    <!-- Home Section -->
+    <div *ngIf="activeTab === 'home'" class="admin-home">
+      <div *ngIf="showWelcome" class="welcome-message">
+        <p>Welcome, Admin! Manage election data efficiently.</p>
+      </div>
+      <h3>Admin Capabilities</h3>
+      <ul>
+        <li>Manage States</li>
+        <li>Manage Districts</li>
+        <li>Manage Parties</li>
+        <li>Manage Candidates</li>
+        <li>View Election Results</li>
+      </ul>
+    </div>
+
+    <!-- State Management Section -->
+    <div *ngIf="activeTab === 'state'" class="section-container">
+      <h3 style="color:white;text-align: center;">Enter State Details</h3>
+      <app-state-form (stateCreated)="onStateCreated()" (stateDeleted)="onStateDeleted()"></app-state-form>
+    </div>
+
+    <!-- District Management Section -->
+    <div *ngIf="activeTab === 'district'" class="section-container">
+      <h3 style="color:white;text-align: center;">Manage Districts</h3>
+      <app-district-form [states]="states" [districts]="districts" (districtCreated)="onDistrictCreated()"
+        (districtDeleted)="onDistrictDeleted()"></app-district-form>
+    </div>
+
+    <!-- Party Management Section -->
+    <div *ngIf="activeTab === 'party'" class="section-container">
+      <h3 style="color:white;text-align: center;">Manage Political Parties</h3>
+      <app-party-form [districts]="districts" (partyCreated)="onPartyCreated()"
+        (partyDeleted)="onPartyDeleted()"></app-party-form>
+      <app-party-list [parties]="parties" (partiesChanged)="onPartiesChanged()"></app-party-list>
+    </div>
+
+    <!-- Candidate Management Section -->
+    <div *ngIf="activeTab === 'candidate'" class="section-container">
+      <h3 style="color:white;text-align: center;">Candidate Management</h3>
+      <app-candidate-list [candidates]="candidates"
+        (candidateSelected)="onCandidateSelected($event)"></app-candidate-list>
+      <app-candidate-edit [selectedCandidate]="selectedCandidate" (candidateUpdated)="onCandidateUpdated()"
+        (candidateDeleted)="onCandidateDeleted()" (candidateCancelled)="onCandidateCancelled()"></app-candidate-edit>
+    </div>
+
+    <!-- Results Section -->
+    <div *ngIf="activeTab === 'results'" class="section-container results-section">
+      <h3 style="color:white;text-align: center;">Election Results Overview</h3>
+      <p class="results-summary">Check the latest results and election trends.</p>
+      <app-results></app-results>
+    </div>
+  </div>
+
+</body>

@@ -1,0 +1,56 @@
+<header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a (click)="goToLanding()" class="nav-title">Voting System</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-link" (click)="goToLanding()">Home</button>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </nav>
+</header>
+
+<body>
+  <div class="home-container">  
+    <!-- Voting Form (If user has not voted) -->
+    <div class="vote-form-container" *ngIf="user && user.role !== 'ADMIN' && !voted">
+      <h2>Cast Your Vote</h2>
+      
+      <div class="form-group">
+        <label style="color: gray;" for="party">Select Party</label>
+        <select id="party" [(ngModel)]="selectedPartyld" required>
+          <option *ngFor="let party of parties" [value]="party.partyId">
+            {{ party.name }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="parties-container">
+        <div *ngFor="let party of parties" class="party-card">
+          <h3>{{ party.name }}</h3>
+          <img *ngIf="party.symbolImage" [src]="'data:image/png;base64,' + party.symbolImage" alt="Party Symbol">
+        </div>
+      </div>
+  
+      <button class="vote-button" (click)="vote()">Vote</button>
+    </div>
+  
+    <!-- UI for candidates who have already voted -->
+    <div *ngIf="voted" class="already-voted-container">
+      <img src="assets/voted.png" alt="Already Voted" class="voted-icon">
+      <h2 class="voted-message">You have already voted.</h2>
+      <p class="voted-subtext">Thank you for participating in the election.</p>
+      <button class="back-home-btn" (click)="goToLanding()" style="margin-top: 30px;">Back to Home</button>
+    </div>
+
+    <!-- Confirmation Message -->
+    <div *ngIf="voteCasted" class="confirmation-message">
+      <p>{{ voteConfirmationMessage }}</p>
+    </div>
+  
+    <!-- Loading Indicator -->
+    <div *ngIf="isLoading" class="loading-container">
+      <p>Loading data...</p>
+    </div>
+  </div>
+</body>

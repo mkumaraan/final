@@ -1,0 +1,66 @@
+/* Container Styling */
+.selected-candidate-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* Form Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #d4007f;
+  outline: none;
+}
+
+/* Buttons */
+.button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #d4007f;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.button:hover {
+  background: linear-gradient(135deg, #e075b6, #d70792);
+}
+
+/* Loading */
+.loading {
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+}

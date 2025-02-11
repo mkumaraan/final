@@ -1,0 +1,85 @@
+/* Container Styling */
+.parties-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* Table Styling */
+.parties-table {
+  width: 900px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+}
+
+.parties-table th, .parties-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.parties-table th {
+  background-color: #d4007f;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Image Styling */
+.parties-table img {
+  display: block;
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* File Input & Button */
+.parties-table input[type="file"] {
+  display: block;
+  margin: 5px auto;
+}
+
+.parties-table button {
+  padding: 8px 12px;
+  border: none;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin-left: 65px;
+  margin-top: 15px;
+}
+
+.parties-table button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.parties-table button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+/* Loading Text */
+.isLoading {
+  color: white;
+  margin-top: 10px;
+}
+
+.ha{
+  color: white;
+  text-align: center;
+}

@@ -1,0 +1,122 @@
+/* Container */
+.state-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  font-size: 20px;
+  padding-bottom: 7px;
+}
+
+.form-group label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 3px;
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+  font-size: 17px;
+}
+
+/* Transparent Input Field */
+.form-group input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+  font-size: 16px;
+}
+
+.form-group input::placeholder {
+  color:gray;
+}
+
+.form-group input:focus {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Buttons */
+.primary-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #d4007f;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #e075b6, #d70792);
+}
+
+/* Loading */
+.loading {
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Table Styling */
+
+.state table{
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+  margin: auto;
+  width: 400px;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  color: black;
+}
+
+.styled-table th {
+  background-color: #e03c9e;
+  color: white;
+  font-weight: bold;
+}
+
+/* Delete Button */
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  background: linear-gradient(135deg, #f23303, #f50014);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #ff4757, #ff6b81);  
+}
+
+.table-head{
+  color: white;
+  text-align: center;
+  margin-top: 40px;
+}

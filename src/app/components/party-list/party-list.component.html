@@ -1,0 +1,29 @@
+<h2 class="ha">Parties</h2>
+<table class="parties-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Leader</th>
+      <th>District ID</th>
+      <th>Symbol</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let party of parties">
+      <td>{{ party.partyId }}</td>
+      <td>{{ party.name }}</td>
+      <td>{{ party.leaderName }}</td>
+      <td>{{ party.districtId }}</td>
+      <td>
+        <img *ngIf="party.symbolImage" [src]="'data:image/png;base64,' + party.symbolImage" alt="Party Symbol" width="50">
+      </td>
+      <td>
+        <input type="file" (change)="onFileSelectedForParty($event, party.partyId)">
+        <button (click)="uploadSymbolForParty(party.partyId)" [disabled]="!selectedFile">Upload</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="isLoading">Loading...</div>
